@@ -157,7 +157,7 @@
         .hero-profile-img {
             width: 100%;
             height: 100%;
-            object-fit: best-fit;
+            object-fit: cover;
             border-radius: 50%;
         }
 
@@ -218,11 +218,37 @@
             text-align: left;
             font-size: 1.2rem;
             line-height: 1.8;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             max-width: 800px;
             opacity: 0.9;
             animation: slideInUp 1s ease 0.6s both;
             padding: 0 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease 0.7s both;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            color: #64ffda;
+        }
+
+        .contact-item a {
+            color: #64ffda;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #ff6b6b;
         }
 
         .cta-button {
@@ -300,13 +326,8 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #64ffda, #ff6b6b);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #0f0f23;
-            margin: 0 auto;
+            object-fit: cover;
+            border: 4px solid #64ffda;
             transition: transform 0.3s ease;
         }
 
@@ -405,19 +426,57 @@
             font-size: 0.9rem;
         }
 
-        .project-links {
-            display: flex;
-            gap: 1rem;
+        /* Education Section - Horizontal Layout */
+        .education-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .project-link {
+        .education-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .education-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(100, 255, 218, 0.2);
+        }
+
+        .education-year {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(45deg, #64ffda, #ff6b6b);
+            color: #0f0f23;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .education-degree {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
             color: #64ffda;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
         }
 
-        .project-link:hover {
+        .education-institution {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .education-score {
+            font-size: 1.2rem;
+            font-weight: bold;
             color: #ff6b6b;
         }
 
@@ -530,6 +589,10 @@
                 text-align: center;
             }
 
+            .contact-info {
+                align-items: center;
+            }
+
             .hero-profile-container {
                 width: 200px;
                 height: 200px;
@@ -554,7 +617,8 @@
             }
 
             .skills-grid,
-            .projects-grid {
+            .projects-grid,
+            .education-timeline {
                 grid-template-columns: 1fr;
             }
 
@@ -598,6 +662,8 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -616,14 +682,17 @@
                         Currently pursuing my bachelors CSE - AI/ML at SRM University AP<br>
                         passionate about innovative web applications and exploring AI tools
                     </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <a href="mailto:srividhya.s2gsecb@gmail.com">srividhya.s2gsecb@gmail.com</a>
+                        </div>
+                    </div>
                     <a href="#contact" class="cta-button">Get In Touch</a>
                 </div>
                 <div class="hero-image">
-                    <div class="hero-profile-container" >
-                        <img src="./images/sri2.jpg"  class="hero-profile-img" >
-                        
-                        
-                        
+                    <div class="hero-profile-container">
+                        <img src="./images/sri2.jpg" alt="Srividya Sripathi" class="hero-profile-img">
                     </div>
                 </div>
             </div>
@@ -640,16 +709,14 @@
                      I'm a passionate AIML student at SRM University AP with a keen interest in DevOps and frontend development. 
                      This unique combination of AI/ML knowledge and web development skills allows me to approach problems from 
                       both analytical and creative perspectives.
-
+                    </p>
+                    <p>
                      I'm driven to learn, contribute to innovative solutions, and tackle complex challenges in today's tech landscape.
                      When I'm not coding, you'll find me exploring new technologies and collaborating on meaningful projects that make a difference.
                     </p>
-                    </p>
                 </div>
                 <div class="about-image">
-                    <div class="profile-img">
-                        <img src="./images/sri2.jpg" alt="Profile Image" class="profile-img">
-                    </div>
+                    <img src="./images/sri2.jpg" alt="Profile Image" class="profile-img">
                 </div>
             </div>
         </div>
@@ -699,6 +766,96 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">📅</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Timetable & Room Allotment System</h3>
+                        <p class="project-description">
+                            Python-based automation system for academic scheduling with conflict resolution algorithms and optimal resource allocation.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Algorithms</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">💄</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Beauty E-commerce Platform</h3>
+                        <p class="project-description">
+                            Web-based e-commerce platform for makeup and beauty products with product catalog and shopping cart functionality.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">🚗</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Car Rental Management System</h3>
+                        <p class="project-description">
+                            Database-driven car rental system with comprehensive ER modeling, normalization, and query-based reporting.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">Database Design</span>
+                            <span class="tech-tag">DBMS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-year">2023-2027</div>
+                    <div class="education-content">
+                        <h3 class="education-degree">B.Tech - CSE </h3>
+                        <p class="education-institution">SRM AP University</p>
+                        <div class="education-score">CGPA: 8.01/10.0</div>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-year">2023</div>
+                    <div class="education-content">
+                        <h3 class="education-degree">Class 12th</h3>
+                        <p class="education-institution">Sarada Collage - State Board</p>
+                        <div class="education-score">88%</div>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-year">2021</div>
+                    <div class="education-content">
+                        <h3 class="education-degree">Class 10th</h3>
+                        <p class="education-institution">St.John's - CBSE Board</p>
+                        <div class="education-score">76%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
@@ -732,33 +889,15 @@
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="mailto:srividya@example.com" class="social-link" title="Email">📧</a>
+                <a href="mailto:srividhya.s2gsecb@gmail.com" class="social-link" title="Email">📧</a>
                 <a href="https://www.linkedin.com/in/srividya-sripathi-b00703288/" class="social-link" title="LinkedIn" target="_blank">💼</a>
                 <a href="https://github.com/srividya2104" class="social-link" title="GitHub" target="_blank">🐙</a>
-                <a href="#" class="social-link" title="Twitter">🐦</a>
             </div>
             <p>&copy; 2025 Jnana Nagavalli Siva Srividya Sripathi. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Hero profile image upload
-        document.getElementById('heroFileInput').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.getElementById('heroProfileImg');
-                    const placeholder = document.getElementById('heroProfilePlaceholder');
-                    
-                    img.src = e.target.result;
-                    img.style.display = 'block';
-                    placeholder.style.display = 'none';
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -785,29 +924,3 @@
             alert('Thank you for your message! I\'ll get back to you soon.');
             this.reset();
         });
-
-        // Add intersection observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-    </script>
-</body>
-</html>
